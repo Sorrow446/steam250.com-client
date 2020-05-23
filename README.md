@@ -58,7 +58,7 @@ Trending:
 
 Keys vary by ranking type.
 - "developers" and "publishers" also return the "known_for" key.
-- "most_played" returns the "players" key, but no "score" or "votes" key.
+- "most played" returns the "players" key, but no "score" or "votes" key.
 - "trending" returns the "velocity" key, but no "score" or "votes" key. 
 
 ## Rankings
