@@ -206,7 +206,7 @@ class Client():
 		soup = BeautifulSoup(html, 'html.parser')
 		ranking = soup.find('div', {'class': 'main ranking'})
 		columns = ranking.find_all('div', id=True)
-		desc = soup.find('div', {'class': 'content'}).find('p').text.strip()
+		desc = soup.find('div', {'class': 'content'}).find('p').text.strip().replace('   ', ' ')
 		parsed['description'] = desc
 		for c in columns:
 			pos = int(c['id'])
@@ -228,17 +228,17 @@ class Client():
 			except AttributeError:
 				price = "Free"
 			game = {
-				"movement": movement,
-				"platforms": [
+				'movement': movement,
+				'platforms': [
 					p['title'] for p in c.find('span', {'class': 'platforms'})
 				],
-				"pos": pos,
-				"price": price,
-				"rating": c.find('span', {'class': 'rating'}).text[-3:],
-				"tag": c.find('a', {'class': 'genre'}).text,
-				"thumbnail": c.find('img', {'alt': 'Logo'})['src'],
-				"title": title.text,
-				"url": title['href'].strip()
+				'pos': pos,
+				'price': price,
+				'rating': c.find('span', {'class': 'rating'}).text[-3:],
+				'tag': c.find('a', {'class': 'genre'}).text,
+				'thumbnail': c.find('img', {'alt': 'Logo'})['src'],
+				'title': title.text,
+				'url': title['href'].strip()
 			}
 			try:
 				game['date'] = c.find('span', {'class': 'date'})['title']
