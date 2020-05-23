@@ -268,5 +268,5 @@ class Client():
 		try:
 			path = self.paths[ranking.lower()]
 		except KeyError:
-			raise ValueError('Received an invalid rank type: ' + str(rank_type))
+			raise ValueError('Received an invalid rank type: ' + str(ranking))
 		return self.ranking(path, limit)
