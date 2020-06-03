@@ -55,7 +55,7 @@ class Client():
 			'cute': "tag/cute",
 			'cyberpunk': "tag/cyberpunk",
 			'dark fantasy': "tag/dark_fantasy",
-			'dating_sim': "tag/dating_sim",
+			'dating sim': "tag/dating_sim",
 			'dark': "tag/dark",
 			'developers': "developer",
 			'difficult': "tag/difficult",
